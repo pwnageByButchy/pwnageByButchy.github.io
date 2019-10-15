@@ -36,6 +36,9 @@ $background-pattern: 'random-grey-variations.png';
 //********************************************************
 //                  Common styles
 //********************************************************
+html {
+	overflow-y: scroll;	
+}
 body {
   color: $font-color;
   background: $background-color url(pics/background/#{$background-pattern});
