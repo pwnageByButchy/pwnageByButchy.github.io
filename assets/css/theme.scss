@@ -42,6 +42,7 @@ html {
 body {
   color: $font-color;
   background: $background-color url(pics/background/#{$background-pattern});
+  text-align: justify;
 }
 .card {
   background-color: $post-panel-color;
