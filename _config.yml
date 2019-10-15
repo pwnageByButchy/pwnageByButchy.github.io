@@ -22,10 +22,10 @@ share:
 
 social:
   github: pwnageByButchy
-  stackoverflow: ''
+  stackoverflow: 
   linkedin: 'stephenbartimote'
-  instagram: ''
-  lastfm: ''
+  instagram: 
+  lastfm: 
   rss: feed.xml
 
 # Google Analytics key, leave blank to ignore
