@@ -4,5 +4,5 @@ title: About
 
 ---
 
-# Some info 
-...about how cool you are ;)
+# About Butchy 
+Enter text here to tell everyone...about how cool you are ;)
