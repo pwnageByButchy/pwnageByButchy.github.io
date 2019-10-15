@@ -5,5 +5,7 @@ title: About
 ---
 
 # About Butchy 
-Enter text here to tell everyone...about how cool you are ;)
-![img]({{ '/assets/images/butchy.png' | relative_url }}){:style="clear: right"}
+
+![img]({{ '/assets/images/butchy.png' | relative_url }}){: .center-image }
+
+>Enter text here to tell everyone...about how cool you are ;)
