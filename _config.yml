@@ -1,13 +1,13 @@
 # Jekyll configuration
 
 name: pwnageByButchy
-description: A blog of Butchy's meanderings.
+description: A blog of meanderings from Butchy.
 
 # Url is currently only used only for the RSS feed in feed.xml
 url: https://pwnagebybutchy.github.io/
 
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
-baseurl: '
+baseurl: 
 
 author: Butchy
 copyright: 2019
