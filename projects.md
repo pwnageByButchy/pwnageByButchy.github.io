@@ -8,7 +8,7 @@ From time to time I get involved with various projects. Currently I'm only invol
 <br /><br />
 ## Study Sessions with Butchy
 
-_ Calling All Newbies,
+Calling All Newbies,
 
 I am organise a weekly study / learning sessions for us Newbies that are asking the question...Where do I start?...
 
@@ -37,4 +37,4 @@ Needed Resources:
 2. VMWare Workstation Player (Free) – Windows Download Link 
 3. A Kali Linux VM - [https://www.kali.org/downloads/](https://www.kali.org/downloads/)
 4. Georgia Weidman’s “Penetration Testing – A Hands On Introduction to Hacking”
-5. An Internet Connection _
+5. An Internet Connection
