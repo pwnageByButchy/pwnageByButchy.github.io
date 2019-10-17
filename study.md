@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Study Sessions with Butchy
+tags:
+ - educational
 
 ---
 # Study Sessions with Butchy
