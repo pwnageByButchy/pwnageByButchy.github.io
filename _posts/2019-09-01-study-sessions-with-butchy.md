@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Study Sessions with Butchy
+description: Calling All Newbies, <br />< br />I am organise a weekly study / learning sessions for us Newbies that are asking the question…Where do I start?…Well right here!
 tags:
  - Educational
 
