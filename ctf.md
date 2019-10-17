@@ -3,9 +3,9 @@ What do I mean by “Gamification” and what is a CTF?
 
 Webster’s Dictionary defines Gamification as
 
-__the process of adding games or game-like elements to something (such as a task), so as to encourage participation__
+_the process of adding games or game-like elements to something (such as a task), so as to encourage participation_
 
-__Capture the flag (CTF) is traditionally an outdoor game where two teams each have a flag (or other marker) and the objective is to capture the other team's flag, located at the team's "base," and bring it safely back to your base.__
+_Capture the flag (CTF) is traditionally an outdoor game where two teams each have a flag (or other marker) and the objective is to capture the other team's flag, located at the team's "base," and bring it safely back to your base._
 
 
 The biggest thing is they are lots of fun!
