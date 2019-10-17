@@ -15,4 +15,6 @@ The event has been modelled against 20 successful missing persons hackathons run
 <br />
 Whilst we did not win, we did have a lot to offer and even though the competition ended we still offered up all the information that we did not get the opportunity to submit during the competition, on our 12 missing people. The winners "Team SaaB" from Adelaide, the table next to us. They did a fantastic effort as did all the teams.
 <br />
-On a personal note one of my submissions was voted "Most Creative" where using my programmer background I pulled apart website source code to reveal several paypal accounts that had previously been unknown to the police as a possible finance lead. Being my first ever Hackathon, well suffice it to say I was very chuffed with my efforts and the support and congrats from my team mates (who also did an Awesome job) and the InfoSec community in general. For a Noob the support has been amazing!
+On a personal note one of my submissions was voted "Most Creative" where using my programmer background I pulled apart website source code to reveal several paypal accounts that had previously been unknown to the police as a possible finance lead. Being my first ever Hackathon, well suffice it to say I was very chuffed with my efforts and the support and congrats from my team mates (who also did an Awesome job) and the InfoSec community in general. 
+<br />
+For a Noob the support has been amazing!
