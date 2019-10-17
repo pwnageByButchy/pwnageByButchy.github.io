@@ -1,7 +1,7 @@
 ---
-Layout: post
-Title: Introduction
-Tags:
+layout: post
+title: Introduction
+tags:
  - educational
 ---
 # Introduction
