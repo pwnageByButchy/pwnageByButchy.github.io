@@ -2,7 +2,7 @@
 layout: post
 title: Study Sessions with Butchy
 tags:
- - educational
+ - Educational
 
 ---
 # Study Sessions with Butchy
