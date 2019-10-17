@@ -6,7 +6,6 @@ tags:
  - Educational
 
 ---
-# Study Sessions with Butchy
 
 Calling All Newbies,
 
