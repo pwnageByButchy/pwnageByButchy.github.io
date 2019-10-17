@@ -21,7 +21,7 @@ Each CTF has its own scenario or strategy from attack/defence, point orientated 
 
 King of the Hill is the most common CTF type. Some websites offer these types of CTFs and have scoreboards were players are ranked and awarded points based on their progress and the quicker you capture a system the more points you are awarded.
 
-There are also hardware CTFs, these can happen for those into hardware devices, their security mechanisms and can usually extend into Lock Picking, Safes, card readers, electronics and motor vehicles.
+There are also hardware CTFs, these can happen for those into hardware devices, their security mechanisms and can usually extend into lock picking, safes, card readers, electronics and motor vehicles.
 
 
 In information security, Capture the Flags (CTFs), a type of war-game, is a gamification of computer security. CTFs are usually designed to serve as an educational exercise to give participants experience in finding deficiencies in a machine, system, operating system or application's security, as well as conducting and reacting to the sort of attacks found in the real world.
