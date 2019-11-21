@@ -29,3 +29,8 @@ tags:
 [Game of Hacks](http://www.gameofhacks.com/)
 [Root Me](https://www.root-me.org/)
 [CTFtime](https://ctftime.org/)
+[PicoCTF](https://picoctf.com/)
+[VulnHub](https://www.vulnhub.com/)
+[UnderTheWire](https://underthewire.tech/)
+[SANS Holiday Hack Challenge](https://holidayhackchallenge.com)
+[PentesterLabs](https://pentesterlab.com/)
