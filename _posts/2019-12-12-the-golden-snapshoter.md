@@ -4,6 +4,7 @@ title: The Golden Snapshoter
 description: A Python3 script to create and maintain a “Golden Image” of VMs in VMWare Workstation (for the moment) on either a Windows or Linux hosts!
 tags:
  - Tools
+ - Project
 
 ---
 A Python3 script to create and maintain a “Golden Image” of VMs in VMWare Workstation (for the moment) on either a Windows or Linux host...
