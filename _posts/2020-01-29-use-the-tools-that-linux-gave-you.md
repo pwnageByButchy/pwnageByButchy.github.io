@@ -32,7 +32,7 @@ Now lets look at email addresses, using the same output.txt file and grep we wil
 
 There you have it a text file called emailAddressess.txt containing all the email addresses theHarvester's output has... now you'll notice with starting theHarvester that it's developer's email address is also listed in our output.txt (usually the top entry) be sure to remove it from your file...wouldn't want to spam him.
 <br /> you still keep the output.txt as the evidence of 1. the commands you ran and 2. the output you received in your engagement. However that recording of that is done for you with script.
-<br />
+
 With Grep really the only limitation is your knowledge of regular expressions. Definitely take the time to "try" and understand them...it's worth it!
 
 Somethings to know/remember:
