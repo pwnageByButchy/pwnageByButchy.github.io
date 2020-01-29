@@ -36,6 +36,6 @@ There you have it a text file called emailAddressess.txt containing all the emai
 With Grep really the only limitation is your knowledge of regular expressions. Definitely take the time to "try" and understand them...it's worth it!
 
 Somethings to know/remember:
-..*Script only records the current session so you can feel free to open a second terminal session and it wont record it... now if you are like me 1 terminal window is not enough, look at the man page for script there is an --append option or in your second terminal create a different output file. For example I run nmap in a seperate window and create a second file called nmapOutput.txt which I then use grep to strip out all the IPs and services. But really learn these commands and use and abuse them
+* Script only records the current session so you can feel free to open a second terminal session and it wont record it... now if you are like me 1 terminal window is not enough, look at the man page for script there is an --append option or in your second terminal create a different output file. For example I run nmap in a seperate window and create a second file called nmapOutput.txt which I then use grep to strip out all the IPs and services. But really learn these commands and use and abuse them
 
-..*Script only does terminal applications, anything in a GUI you'll need to configure that application to generate an output file.
+* Script only does terminal applications, anything in a GUI you'll need to configure that application to generate an output file.
