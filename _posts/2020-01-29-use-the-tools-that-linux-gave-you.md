@@ -37,3 +37,5 @@ With Grep really the only limitation is your knowledge of regular expressions. D
 
 Something to know:
 Script record only the current session so you can feel free to open a second terminal session and it wont record it... now if you are like me 1 terminal window is not enough, look at the man page fo rscript there is an --append option or in your second terminal create a different output file. I run nmap in a seperate window and create a second file called nmapOutput.txt. But really its up to you learn these commands and use and abuse them
+
+Script only does terminal applications, anything in a GUI you'll need to configure that application to generate an output file.
