@@ -25,17 +25,17 @@ Now we let that run and all the command and the output that come from theHarvest
 Now this is where we get down to filtering out data, theHarvester collects a lot of OSINT data for us to use but it's all in one file...what if we wanted to strip out say just twitter handles or email addresses that it found, so that we can use it in other applications. If we just used the output.txt by itself most of our applications would error with other erroneous input that is in the txt file. 
 
 So let's start with the Twitters by using grep we can strip out the twitter handles into another file. `grep -E -o "@[0-9a-zA-Z]+" < output.txt > twitterHandles.txt` 
-<br />
+
 This uses a regular expression to strip out a twitter handle like mine @SteveBartimote and then puts it into a text file called twitterHandles.txt... but all that file will contain is twitter usernames!
 <br />
 Now lets look at email addresses, using the same output.txt file and grep we will use a different regular expression to strip out emails. `grep -E -o “\b[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+\b” < output.txt > emailAddresses.txt`
-<br />
+
 There you have it a text file called emailAddressess.txt containing all the email addresses theHarvester's output has... now you'll notice with starting theHarvester that it's developer's email address is also listed in our output.txt (usually the top entry) be sure to remove it from your file...wouldn't want to spam him.
 <br /> you still keep the output.txt as the evidence of 1. the commands you ran and 2. the output you received in your engagement. However that recording of that is done for you with script.
 <br />
 With Grep really the only limitation is your knowledge of regular expressions. Definitely take the time to "try" and understand them...it's worth it!
 
-Something to know:
-Script record only the current session so you can feel free to open a second terminal session and it wont record it... now if you are like me 1 terminal window is not enough, look at the man page fo rscript there is an --append option or in your second terminal create a different output file. I run nmap in a seperate window and create a second file called nmapOutput.txt. But really its up to you learn these commands and use and abuse them
+Somethings to know/remember:
+..*Script only records the current session so you can feel free to open a second terminal session and it wont record it... now if you are like me 1 terminal window is not enough, look at the man page for script there is an --append option or in your second terminal create a different output file. For example I run nmap in a seperate window and create a second file called nmapOutput.txt which I then use grep to strip out all the IPs and services. But really learn these commands and use and abuse them
 
-Script only does terminal applications, anything in a GUI you'll need to configure that application to generate an output file.
+..*Script only does terminal applications, anything in a GUI you'll need to configure that application to generate an output file.
