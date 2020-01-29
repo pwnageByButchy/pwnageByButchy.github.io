@@ -14,7 +14,7 @@ So thats the first tool and it'll record your terminal session. Now we move onto
 
 Enter Grep, it searches for patterns in each file.  Patterns are one or more patterns separated by newline characters, and grep prints each line that matches a pattern. I would suggest checking out the man page for grep located at [grep manpage](http://www.man7.org/linux/man-pages/man1/grep.1.html) or you can simply type man grep in your terminal. 
 
-So our Script command gives an output file, we can then search that file using grep and now start separating out all our output into nicely filtered files. So say we use theHarvester application to gather information on a target...let's use Microsoft as our victim...oh I mean target lol
+So our Script command gives an output file, we can then search that file using grep and now start separating out all our output into nicely filtered files. So say we use theHarvester application to gather information on a target...let's use Microsoft as our ~~victim~~...oh I mean target lol
 <br />
 We've enabled script by typing `script output.txt` 
 
