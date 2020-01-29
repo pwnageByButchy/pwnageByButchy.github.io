@@ -18,16 +18,16 @@ We now run theHarvester `theHarvester -d microsoft.com -l 1000 -b all`
 
 Now we let that run and all the command and the output that come from theHarvester and that are displayed on the screen are written to our output.txt file. Once our command has completed successfully we simply exit out of script by typing `exit` (please note you could keep script going and do other tasks like nmap scans, netcat banner grabbing, just remember to exit at the end)
 <br />
-Now this is where we get down to filtering out data, theHarvester collects a lot of OSINT data for us to use but it's all in one file...what it we wanted to strip out say just twitter handles or email addresses it found, so that we can use it in other applications. If we just used the output.txt by itself most of our applications would error with other erroneous input that is in the txt file. Enter Grep
-<br />
-So let's start with the Twitters by using grep we can strip out the twitter handles into another file. 
+Now this is where we get down to filtering out data, theHarvester collects a lot of OSINT data for us to use but it's all in one file...what it we wanted to strip out say just twitter handles or email addresses it found, so that we can use it in other applications. If we just used the output.txt by itself most of our applications would error with other erroneous input that is in the txt file. 
 
-`grep -E -o "@[0-9a-zA-Z]+" < output.txt > twitterHandles.txt` 
+<br />
+Enter Grep
+<br />
+So let's start with the Twitters by using grep we can strip out the twitter handles into another file. `grep -E -o "@[0-9a-zA-Z]+" < output.txt > twitterHandles.txt` 
 <br />
 This uses a regular expression to strip out a twitter handle like mine @SteveBartimote and then puts it into a text file called twitterHandles.txt... but all that file will contain is twitter usernames!
 <br />
-Now lets look at email addresses, using the same output.txt file and grep we will use a different regular expression to strip out emails
-`grep -E -o “\b[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+\b” < output.txt > emailAddresses.txt`
+Now lets look at email addresses, using the same output.txt file and grep we will use a different regular expression to strip out emails. `grep -E -o “\b[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+\b” < output.txt > emailAddresses.txt`
 <br />
 There you have it a text file called emailAddressess.txt containing all the email addresses theHarvester's output has... not you'll notice with starting theHarvester that it's developer's email address is also listed (usually the top entry) be sure to remove it from your file...wouldn't want to spam him.
 <br /> you still keep the output.txt as the evidence of 1. the commands you ran and 2. the output you received in your engagement. However that recording of that is done for you with script.
