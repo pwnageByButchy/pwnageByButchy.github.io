@@ -16,7 +16,7 @@ We've enabled script by typing `script output.txt`
 
 We now run theHarvester `theHarvester -d microsoft.com -l 1000 -b all`
 
-Now we let that run and all the commands and the output that come from theHarvester and are disabled on the screen are written to our output.txt file. Once our command has completed successfully we simply exit out of script by typing `exit`
+Now we let that run and all the command and the output that come from theHarvester and that are displayed on the screen are written to our output.txt file. Once our command has completed successfully we simply exit out of script by typing `exit` (please note you could keep script going and do other tasks like nmap scans, netcat banner grabbing, just remember to exit at the end)
 <br />
 Now this is where we get down to filtering out data, theHarvester collects a lot of OSINT data for us to use but it's all in one file...what it we wanted to strip out say just twitter handles or email addresses it found, so that we can use it in other applications. If we just used the output.txt by itself most of our applications would error with other erroneous input that is in the txt file. Enter Grep
 <br />
