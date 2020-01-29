@@ -12,16 +12,11 @@ Enter the linux tool "script" makes a typescript of everything on your terminal 
 Script if not given a filename will create a file in your current working directory called "transcript" but you can alternative give it a filename that is a bit better. for example  `script output.txt` and it can be just that simple. I would suggest checking out the man page for script located at http://man7.org/linux/man-pages/man1/script.1.html or you can simply type man script in your terminal.<br />
 So thats the first tool and it'll record your terminal session. Now we move onto the second and well it is better known...Grep! Because our Script command gives an output file we can then search that file using grep and start separating out all out output into nicely filtered files. So say we use theHarvester to gather information on a target...let's use Microsoft lol
 <br />
-We've enabled script by typing `script Output.txt` 
+We've enabled script by typing `script output.txt` 
 <br />
-We now run theHarvester 
-<br />`theHarvester -d microsoft.com -l 1000 -b all`
+We now run theHarvester `theHarvester -d microsoft.com -l 1000 -b all`
 <br />
-Now we let that run and all the commands and the output that come from theHarvester and are disabled on the screen are written to our output.txt file 
-<br />
-Once our command has completed successfully we simply exit out of script by typing 
-<br />
-`exit`
+Now we let that run and all the commands and the output that come from theHarvester and are disabled on the screen are written to our output.txt file. Once our command has completed successfully we simply exit out of script by typing `exit`
 <br />
 Now this is where we get down to filtering out data, theHarvester collects a lot of OSINT data for us to use but it's all in one file...what it we wanted to strip out say just twitter handles or email addresses it found, so that we can use it in other applications. If we just used the output.txt by itself most of our applications would error with other erroneous input that is in the txt file. Enter Grep
 <br />
