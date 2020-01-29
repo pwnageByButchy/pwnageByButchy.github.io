@@ -20,7 +20,7 @@ Now we let that run and all the command and the output that come from theHarvest
 <br />
 Now this is where we get down to filtering out data, theHarvester collects a lot of OSINT data for us to use but it's all in one file...what it we wanted to strip out say just twitter handles or email addresses it found, so that we can use it in other applications. If we just used the output.txt by itself most of our applications would error with other erroneous input that is in the txt file. 
 
-Enter Grep
+Enter Grep, it searches for patterns in each file.  Patterns is one or patterns separated by newline characters, and grep prints each line that matches a pattern. I would suggest checking out the man page for grep located at [grep manpage](http://www.man7.org/linux/man-pages/man1/grep.1.html) or you can simply type man grep in your terminal. 
 
 So let's start with the Twitters by using grep we can strip out the twitter handles into another file. `grep -E -o "@[0-9a-zA-Z]+" < output.txt > twitterHandles.txt` 
 <br />
@@ -30,3 +30,5 @@ Now lets look at email addresses, using the same output.txt file and grep we wil
 <br />
 There you have it a text file called emailAddressess.txt containing all the email addresses theHarvester's output has... not you'll notice with starting theHarvester that it's developer's email address is also listed (usually the top entry) be sure to remove it from your file...wouldn't want to spam him.
 <br /> you still keep the output.txt as the evidence of 1. the commands you ran and 2. the output you received in your engagement. However that recording of that is done for you with script.
+<br />
+With Grep really the only limitation is your knowledge of regular expressions. Definitely take the time to "try" and understand them...it's worth it!
