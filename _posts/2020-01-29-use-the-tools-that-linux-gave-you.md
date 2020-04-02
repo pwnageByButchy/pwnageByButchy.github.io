@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Use the tools linux gave You!
-description: A post about 2 tools all linux distributions give you. This is handy for recording and extracting data. <br />So recently I have been undertaking some courses in order to increase the knowledge I have on Pen testing and hacking in general. One of the common themes is about adequate note taking in which they (the instructors) would go into demonstrations of different applications they use to accomplish this and it dawned on me… you are using linux why not just use the tools already installed?
+description: A post about 2 tools all linux distributions give you. This is handy for recording and extracting data. <br /><br />So recently I have been undertaking some courses in order to increase the knowledge I have on Pen testing and hacking in general. One of the common themes is about adequate note taking in which they (the instructors) would go into demonstrations of different applications they use to accomplish this and it dawned on me… you are using linux why not just use the tools already installed?
 tags:
  - Tools
 
