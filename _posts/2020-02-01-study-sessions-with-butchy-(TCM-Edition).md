@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Study Sessions with Butchy v2.0 (TCM Edition)
-description: Calling All Newbies, <br /><br />We are organising another weekly study / learning sessions for us noobs, that are asking the question…Where do I start?…Well right here!
+description: Calling All Newbies, <br /><br />We are organising another weekly study / learning sessions for us noobs, that are asking the question…Where do I start?…Well right here!<br /><br />On Monday the 27th April of 2020 we will start a new “Study Sessions with Butchy”, this time focusing on the Cyber Mentor’s Udemy course “Practical Ethical Hacking – The Complete Course” as our reference material.
 tags:
  - Educational
  - Project
