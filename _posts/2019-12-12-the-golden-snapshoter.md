@@ -13,4 +13,4 @@ This saves deleting the VM, downloading the VM and then updating it, download al
 
 With GoldenSnapshoter your VMs, have your Git repos have a commit done (so you don't loose your code), they are then reset to your current golden image, the guest OS is updated, yours and third party Git repos are updated/downloaded and then that is saved as your new "Golden Image".
 
-<i class="fab fa-github fa-2x"></i> [Go to Github Repo](https://github.com/pwnageByButchy/GoldenSnapshoter)
+<p><i class="fab fa-github fa-2x"></i> [Go to Github Repo](https://github.com/pwnageByButchy/GoldenSnapshoter)</p>
