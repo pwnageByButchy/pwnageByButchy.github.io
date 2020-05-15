@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Happy Coronavirus Month.
-description: Nothing to major in this months post just a list of ideas to keep use busy whilst Socially Isolating.
+description: Nothing to major in this months post just a list of ideas to keep us busy whilst Socially Isolating.
 tags:
  - Tools
  - Project
