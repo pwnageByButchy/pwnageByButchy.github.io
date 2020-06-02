@@ -25,15 +25,9 @@ Now we install VLC to do our streaming `sudo apt install vlc`
 
 Now to initiate the stream we run `raspivid -o - -t 0 -n -w 640 -h 480 -fps 30 -rot 270 -br 50 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264`
 
-Here we are using the inbuilt application raspivid to activate the camera and passing it through the commandline version VLC to create the RTSP stream. Now we can just use VLC on our desktop to "open a network stream" to rtsp://[Pi Zero's IP Address]:8554/ and you should now see the camera's feed.
+Here we are using the inbuilt application raspivid to activate the camera and passing it through the commandline version VLC to create the RTSP stream. Now we can just use VLC on our desktop to "open a network stream" to rtsp://[Pi Zero's IP Address]:8554/ and you should now see the camera's feed. I created a script to run this command on boot or the Pi Zero so that as soon as the Pi Zero boots it is streaming video over RTSP.
 
-I created a script to run this command on boot or the Pi Zero so that as soon as the Pi Zero boots it is streaming video over RTSP.
-
-Next step was to setup the Ubuntu VM to record the stream. For phase 1 it is recording hourly increments in phase 2 I will add motion detection so it will only record when it detects motion.
-
-I used the latest version of Ubuntu, nothing special but again I updated the OS with `sudo apt update && sudo apt upgrade`
-
-The installed ffmpeg for the recording `sudo apt install ffmpeg vlc` also VLC to ensure the VM was seeing the feed but it is not a required component.
+Next step was to setup the Ubuntu VM to record the stream. For phase 1 it is recording hourly increments in phase 2 I will add motion detection so it will only record when it detects motion. I used the latest version of Ubuntu, nothing special but again I updated the OS with `sudo apt update && sudo apt upgrade`. The installed ffmpeg for the recording `sudo apt install ffmpeg vlc` also VLC to ensure the VM was seeing the feed but it is not a required component.
 
 I created a bash file to record the video and added it to the crontab so that every hour it would record an hour of video. Stores it in a folder called "Recordings" the a subfolder of the date of the day it was recorded
 
