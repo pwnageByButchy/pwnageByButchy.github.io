@@ -25,6 +25,6 @@ All you need to do is:
 
 Then to run it do the following:
 6. Configure all the variables in the settings.py to match your environment
-7. run python3 ./GoldenSnapshoter.py and follwo the prompts
+7. run python3 ./GoldenSnapshoter.py and follow the prompts
 
 <center><a title="GoldenSnapshoter on Github" href="https://github.com/pwnageByButchy/GoldenSnapshoter" target="_blank"><i class="fab fa-github fa-2x"></i></a></center>
