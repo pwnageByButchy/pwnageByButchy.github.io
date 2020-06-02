@@ -27,4 +27,6 @@ Then to run it do the following:
 6. Configure all the variables in the settings.py to match your environment
 7. run python3 ./GoldenSnapshoter.py and follow the prompts
 
+This application generates a "git_script.txt" in the UpdateScripts directory, if you want this included in your system update copy the contents of this txt file into the appropriate UpdateScript. This is optional based on what you want to do and therefore a manual task.
+
 <center><a title="GoldenSnapshoter on Github" href="https://github.com/pwnageByButchy/GoldenSnapshoter" target="_blank"><i class="fab fa-github fa-2x"></i></a></center>
