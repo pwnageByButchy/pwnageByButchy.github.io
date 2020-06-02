@@ -6,7 +6,7 @@ tags:
  - Project
 
 ---
-The aim is to build a security camera system with out of the box electronics components...by this I mean no soldering!
+The aim is to build a security camera system with out of the box electronic components...by this I mean no soldering!
 
 Using a Raspberry Pi Zero (wireless) with a camera kit, create a security camera and a RTSP video feed. To have that recorded and viewable on a main control machine (for the POC I am usinga Ubuntu VM). A condition of the proof of concept is the need to not program too much code.
 
@@ -60,4 +60,4 @@ This is just phase 1 of my proof of concept, there are systems out there that do
 
 Phase 2 will be focusing on the motion detection which will be processed by the Ubuntu VM... I have thoughts of using a Raspberry Pi 4 for this and setting it up to display the video through the HDMI so you can connect it to your TV and watch the feeds. Past that adding more cameras and then testing all the security.
 
-Once that is done seeing how to make it as user friendly to setup as possible. Maybe some hidden of covert cameras as well. 
+Once that is done seeing how to make it as user friendly to setup as possible. Maybe some hidden of covert cameras as well.
