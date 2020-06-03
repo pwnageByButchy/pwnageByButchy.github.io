@@ -10,13 +10,18 @@ The aim is to build a security camera system with out of the box electronic comp
 
 Using a Raspberry Pi Zero (wireless) with a camera kit, create a security camera and a RTSP video feed. To have that recorded and viewable on a main control machine (for the POC I am usinga Ubuntu VM). A condition of the proof of concept is the need to not program too much code.
 
-Items used:
-Raspberry Pi Zero Wireless
-Raspberry Pi Camera v2
-Raspberry Pi Zero Case (Optional but does include Pi Zero Camera Adapter)
-MicroSD Card with Raspbian Lite
-A Ubuntu Virtual Machine (1GB RAM, 1 CPU)
+![Raspberry Pi Zero](/assets/images/ZeroAssembled.JPG "Raspberry Pi Zero") <br /><br />
+![Raspberry Pi Zero](/assets/images/ZeroMeasured.JPG "Raspberry Pi Zero") <br /><br />
 
+Items used:
+* Raspberry Pi Zero Wireless
+* MicroSD Card with Raspbian Lite
+* Raspberry Pi Camera v2
+* Raspberry Pi Zero Case (Optional but does include Pi Zero Camera Adapter)
+* A Ubuntu Virtual Machine (1GB RAM, 1 CPU)
+
+![Raspberry Pi Zero](/assets/images/ZeroInside.JPG "Raspberry Pi Zero") <br /><br />
+![Raspberry Pi Zero](/assets/images/ZeroOutside.JPG "Raspberry Pi Zero")<br /><br />
 Setup MicroSD with SSH and Wifi Details and boot Pi Zero
 
 SSH into Pi, run `raspi-config` enable camera, change default password and then update OS with `sudo apt update && sudo apt upgrade`
