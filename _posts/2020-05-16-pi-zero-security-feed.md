@@ -24,9 +24,19 @@ Items used:
 ![Raspberry Pi Zero](/assets/images/ZeroOutside.JPG "Raspberry Pi Zero")<br /><br />
 Setup MicroSD with SSH and Wifi Details and boot Pi Zero
 
-SSH into Pi, run `raspi-config` enable camera, change default password
+SSH into Pi, run `sudo raspi-config` enable camera, change default password
+![Raspberry Pi Zero Raspi-Config](/assets/images/runRaspi-Config.PNG "Raspberry Pi Zero Updating the OS")
 
-{{{Insert Screenshot of raspi-config}}}
+![Raspberry Pi Zero Raspi-Config](/assets/images/runRaspi-ConfigMenu.PNG "Raspberry Pi Zero raspi-config main menu")
+
+let's do the password first. go into Change User Password
+
+![Raspberry Pi Zero Raspi-Config Changing Password](/assets/images/passwordChange.PNG "Raspberry Pi Zero Updating the OS")
+
+go into Interfacing Options and select "P1 Camera"
+![Raspberry Pi Zero Raspi-Config](/assets/images/runRaspi-ConfigMenu.PNG "Raspberry Pi Zero raspi-config main menu")
+
+![Raspberry Pi Zero Enabling Camera](/assets/images/enableCamera.PNG "Raspberry Pi Zero Updating the OS")
 
 Then update OS with `sudo apt update -y && sudo apt upgrade -y`
 ![Raspberry Pi Zero Updating OS](/assets/images/aptUpdate.PNG "Raspberry Pi Zero Updating the OS")
@@ -36,7 +46,8 @@ Now to initiate the stream we run `raspivid -o - -t 0 -n -w 640 -h 480 -fps 30 -
 
 Here we are using the inbuilt application raspivid to activate the camera and passing it through the commandline version VLC to create the RTSP stream. Now we can just use VLC on our desktop to "open a network stream" to rtsp://[Pi Zero's IP Address]:8554/ and you should now see the camera's feed.
 
-![Raspberry Pi Zero captured on VLC](/assets/images/vlcOpenNetworkStream.PNG "Raspberry Pi Zero captured on VLC")
+![Raspberry Pi Zero captured on VLC](/assets/images/vlcOpenNetworkStream.PNG "Raspberry Pi Zero captured on VLC")<br /><br />
+
 ![Openning a Network Stream on VLC](/assets/images/vlcRunningStream.PNG "Openning a Network Stream on VLC")<br /><br />
 I created a script to run this command on boot or the Pi Zero so that as soon as the Pi Zero boots it is streaming video over RTSP.
 
