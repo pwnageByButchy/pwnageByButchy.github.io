@@ -49,6 +49,8 @@ Now we install VLC to do our streaming `sudo apt install vlc`
 
 Now to initiate the stream we run `raspivid -o - -t 0 -n -w 640 -h 480 -fps 30 -rot 270 -br 50 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264`
 
+![Raspberry Pi Zero Initate the Stream](/assets/images/raspividCommand.PNG "Raspberry Pi Zero Initate the Stream")
+
 Here we are using the inbuilt application raspivid to activate the camera and passing it through the commandline version VLC to create the RTSP stream. Now we can just use VLC on our desktop to "open a network stream" to rtsp://[Pi Zero's IP Address]:8554/ and you should now see the camera's feed.
 
 ![Raspberry Pi Zero captured on VLC](/assets/images/vlcOpenNetworkStream.PNG "Raspberry Pi Zero captured on VLC")<br /><br />
