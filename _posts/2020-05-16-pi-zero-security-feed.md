@@ -29,18 +29,23 @@ SSH into Pi, run `sudo raspi-config` enable camera, change default password
 
 ![Raspberry Pi Zero Raspi-Config](/assets/images/runRaspi-ConfigMenu.PNG "Raspberry Pi Zero raspi-config main menu")
 
-let's do the password first. go into Change User Password
+Let's do the password first. go into Change User Password
 
 ![Raspberry Pi Zero Raspi-Config Changing Password](/assets/images/passwordChange.PNG "Raspberry Pi Zero Updating the OS")
 
-go into Interfacing Options and select "P1 Camera"
+Now go into Interfacing Options and select "P1 Camera"
+
 ![Raspberry Pi Zero Raspi-Config](/assets/images/runRaspi-ConfigMenu.PNG "Raspberry Pi Zero raspi-config main menu")
 
 ![Raspberry Pi Zero Enabling Camera](/assets/images/enableCamera.PNG "Raspberry Pi Zero Updating the OS")
 
 Then update OS with `sudo apt update -y && sudo apt upgrade -y`
+
 ![Raspberry Pi Zero Updating OS](/assets/images/aptUpdate.PNG "Raspberry Pi Zero Updating the OS")
+
 Now we install VLC to do our streaming `sudo apt install vlc`
+
+![Raspberry Pi Zero Updating OS](/assets/images/installVLC.PNG "Raspberry Pi Zero installing VLC")
 
 Now to initiate the stream we run `raspivid -o - -t 0 -n -w 640 -h 480 -fps 30 -rot 270 -br 50 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264`
 
