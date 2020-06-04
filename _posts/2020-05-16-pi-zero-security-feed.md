@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Security Feeds with Pi Zero
+title: Security Feeds with Pi Zero (Phase 1)
 description: A hardware project...I know right the software guy is doing a hardware project. Using a Pi Zero (or a few of them) and no special software creating an RTSP feed from a Pi Zero with a Pi Camera attached.
 tags:
  - Project
