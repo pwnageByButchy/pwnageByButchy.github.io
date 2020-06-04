@@ -36,7 +36,7 @@ Let's do the password first. go into Change User Password
 
 ![Raspberry Pi Zero Raspi-Config Changing Password](/assets/images/passwordChange.PNG "Raspberry Pi Zero Updating the OS")
 
-Now go into Interfacing Options and select "P1 Camera"
+Now go into "5 Interfacing Options" and then select "P1 Camera"
 
 ![Raspberry Pi Zero Raspi-Config](/assets/images/runRaspi-ConfigMenu.PNG "Raspberry Pi Zero raspi-config main menu")
 
