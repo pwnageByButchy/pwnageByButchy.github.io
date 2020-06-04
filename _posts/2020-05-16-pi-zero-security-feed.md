@@ -20,11 +20,14 @@ Items used:
 * Raspberry Pi Zero Case (Optional but does include Pi Zero Camera Adapter)
 * A Ubuntu Virtual Machine (1GB RAM, 1 CPU)
 
+
+#### Setup the Pi Zero ####
 ![Raspberry Pi Zero](/assets/images/ZeroInside.JPG "Raspberry Pi Zero")
 ![Raspberry Pi Zero](/assets/images/ZeroOutside.JPG "Raspberry Pi Zero")<br /><br />
 Setup MicroSD with SSH and Wifi Details and boot Pi Zero
 
 SSH into Pi, run `sudo raspi-config` enable camera, change default password
+
 ![Raspberry Pi Zero Raspi-Config](/assets/images/runRaspi-Config.PNG "Raspberry Pi Zero Updating the OS")
 
 ![Raspberry Pi Zero Raspi-Config](/assets/images/runRaspi-ConfigMenu.PNG "Raspberry Pi Zero raspi-config main menu")
@@ -58,6 +61,7 @@ Here we are using the inbuilt application raspivid to activate the camera and pa
 ![Openning a Network Stream on VLC](/assets/images/vlcRunningStream.PNG "Openning a Network Stream on VLC")<br /><br />
 I created a script to run this command on boot or the Pi Zero so that as soon as the Pi Zero boots it is streaming video over RTSP.
 
+#### Setting Up the Ubuntu VM ####
 Next step was to setup the Ubuntu VM to record the stream. For phase 1 it is recording hourly increments in phase 2 I will add motion detection so it will only record when it detects motion. I used the latest version of Ubuntu, nothing special but again I updated the OS with `sudo apt update && sudo apt upgrade`. The installed ffmpeg for the recording `sudo apt install ffmpeg vlc` also VLC to ensure the VM was seeing the feed but it is not a required component.
 
 I created a bash file to record the video and added it to the crontab so that every hour it would record an hour of video. Stores it in a folder called "Recordings" the a subfolder of the date of the day it was recorded
