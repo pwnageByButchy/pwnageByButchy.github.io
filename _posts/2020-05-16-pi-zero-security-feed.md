@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Security Feeds with Pi Zero
-description: A hardware project...I know right the software guy is doign a hardware project. Using a Pi Zero (or a few of them) and no special software creating an RTSP feed from a Pi Zero with a Pi Camera attached.
+description: A hardware project...I know right the software guy is doing a hardware project. Using a Pi Zero (or a few of them) and no special software creating an RTSP feed from a Pi Zero with a Pi Camera attached.
 tags:
  - Project
 
@@ -10,8 +10,8 @@ The aim is to build a security camera system with out of the box electronic comp
 
 Using a Raspberry Pi Zero (wireless) with a camera kit, create a security camera and a RTSP video feed. To have that recorded and viewable on a main control machine (for the POC I am usinga Ubuntu VM). A condition of the proof of concept is the need to not program too much code.
 
-![Raspberry Pi Zero](/assets/images/ZeroAssembled.JPG "Raspberry Pi Zero") <br /><br />
-![Raspberry Pi Zero](/assets/images/ZeroMeasured.JPG "Raspberry Pi Zero") <br /><br />
+![Raspberry Pi Zero](/assets/images/ZeroAssembled.JPG "Raspberry Pi Zero Fully Assembled")
+![Raspberry Pi Zero](/assets/images/ZeroMeasured.JPG "Raspberry Pi Zero - 8cm long") <br /><br />
 
 Items used:
 * Raspberry Pi Zero Wireless
@@ -20,17 +20,25 @@ Items used:
 * Raspberry Pi Zero Case (Optional but does include Pi Zero Camera Adapter)
 * A Ubuntu Virtual Machine (1GB RAM, 1 CPU)
 
-![Raspberry Pi Zero](/assets/images/ZeroInside.JPG "Raspberry Pi Zero") <br /><br />
+![Raspberry Pi Zero](/assets/images/ZeroInside.JPG "Raspberry Pi Zero")
 ![Raspberry Pi Zero](/assets/images/ZeroOutside.JPG "Raspberry Pi Zero")<br /><br />
 Setup MicroSD with SSH and Wifi Details and boot Pi Zero
 
-SSH into Pi, run `raspi-config` enable camera, change default password and then update OS with `sudo apt update && sudo apt upgrade`
+SSH into Pi, run `raspi-config` enable camera, change default password
 
+{{{Insert Screenshot of raspi-config}}}
+
+Then update OS with `sudo apt update -y && sudo apt upgrade -y`
+![Raspberry Pi Zero Updating OS](/assets/images/aptUpdate.PNG "Raspberry Pi Zero Updating the OS")
 Now we install VLC to do our streaming `sudo apt install vlc`
 
 Now to initiate the stream we run `raspivid -o - -t 0 -n -w 640 -h 480 -fps 30 -rot 270 -br 50 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264`
 
-Here we are using the inbuilt application raspivid to activate the camera and passing it through the commandline version VLC to create the RTSP stream. Now we can just use VLC on our desktop to "open a network stream" to rtsp://[Pi Zero's IP Address]:8554/ and you should now see the camera's feed. I created a script to run this command on boot or the Pi Zero so that as soon as the Pi Zero boots it is streaming video over RTSP.
+Here we are using the inbuilt application raspivid to activate the camera and passing it through the commandline version VLC to create the RTSP stream. Now we can just use VLC on our desktop to "open a network stream" to rtsp://[Pi Zero's IP Address]:8554/ and you should now see the camera's feed.
+
+![Raspberry Pi Zero captured on VLC](/assets/images/vlcOpenNetworkStream.PNG "Raspberry Pi Zero captured on VLC")
+![Openning a Network Stream on VLC](/assets/images/vlcRunningStream.PNG "Openning a Network Stream on VLC")<br /><br />
+I created a script to run this command on boot or the Pi Zero so that as soon as the Pi Zero boots it is streaming video over RTSP.
 
 Next step was to setup the Ubuntu VM to record the stream. For phase 1 it is recording hourly increments in phase 2 I will add motion detection so it will only record when it detects motion. I used the latest version of Ubuntu, nothing special but again I updated the OS with `sudo apt update && sudo apt upgrade`. The installed ffmpeg for the recording `sudo apt install ffmpeg vlc` also VLC to ensure the VM was seeing the feed but it is not a required component.
 
