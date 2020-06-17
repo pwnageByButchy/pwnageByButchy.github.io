@@ -3,7 +3,7 @@ layout: post
 title: Security Feeds with Pi Zero (Phase 1)
 description: A hardware project...I know right the software guy is doing a hardware project. Using a Pi Zero (or a few of them) and no special software creating an RTSP feed from a Pi Zero with a Pi Camera attached.
 tags:
- - Project
+- Project
 
 ---
 The aim is to build a security camera system with out of the box electronic components...by this I mean no soldering!
@@ -66,6 +66,8 @@ Next step was to setup the Ubuntu VM to record the stream. For phase 1 it is rec
 
 I created a bash file to record the video and added it to the crontab so that every hour it would record an hour of video. Stores it in a folder called "Recordings" the a subfolder of the date of the day it was recorded
 
+So we create the folder by running `mkdir /Recordings`
+
 ```
 #!/bin/bash
 
@@ -82,6 +84,8 @@ mkdir $directory
 ffmpeg -i rtsp://[Pi Zero's IP Address]:8554/ -t 01:00:00 -metadata comment="Recording started at $fulldatetime" -metadata title="$filename" -vcodec copy $directory/$filename
 fi
 ```
+
+then to ensure the script runs on the hour every hour we add a line to the crontab...
 
 This is just phase 1 of my proof of concept, there are systems out there that do this or a similar thing but I found a lot of the heavy lifting was on the Pi Zero which isnt that powerful. So I decided to start from scratch and initially with a single camera.
 
