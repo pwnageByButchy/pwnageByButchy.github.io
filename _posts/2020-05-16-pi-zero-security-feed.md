@@ -59,7 +59,7 @@ Here we are using the inbuilt application raspivid to activate the camera and pa
 ![Raspberry Pi Zero captured on VLC](/assets/images/vlcOpenNetworkStream.PNG "Raspberry Pi Zero captured on VLC")<br /><br />
 
 ![Openning a Network Stream on VLC](/assets/images/vlcRunningStream.PNG "Openning a Network Stream on VLC")<br /><br />
-I created a script to run this command on boot or the Pi Zero so that as soon as the Pi Zero boots it is streaming video over RTSP.
+I created a script to run this command on boot so that as soon as the Pi Zero boots it starts streaming video over RTSP.
 
 #### Setting Up the Ubuntu VM ####
 Next step was to setup the Ubuntu VM to record the stream. For phase 1 it is recording hourly increments in phase 2 I will add motion detection so it will only record when it detects motion. I used the latest version of Ubuntu, nothing special but again I updated the OS with `sudo apt update && sudo apt upgrade`. The installed ffmpeg for the recording `sudo apt install ffmpeg vlc` also VLC to ensure the VM was seeing the feed but it is not a required component.
