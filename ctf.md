@@ -28,6 +28,6 @@ In information security, Capture the Flags (CTFs), a type of war-game, is a gami
 I have only recently started to get into CTF type sites like Hack The Box and Try Hack Me. You can see my progress below.
 
 | Site | Badge |
-| :----- | :-------: |
+| :----- | :------- |
 | Try Hack Me | <script src="https://tryhackme.com/badge/36802"></script> |
 | Hack The Box | <script src="https://www.hackthebox.eu/badge/75978"></script> |
