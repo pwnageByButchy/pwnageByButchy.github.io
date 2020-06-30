@@ -29,6 +29,6 @@ I have only recently started to get into CTF type sites like Hack The Box and Tr
 
 | Site | Badge |
 | :----- | :------- |
-| [https://tryhackme.com/](https://tryhackme.com/) | <script src="https://tryhackme.com/badge/36802"></script> |
+| [Try Hack Me](https://tryhackme.com/) | <script src="https://tryhackme.com/badge/36802"></script> |
 | | |
-| [https://www.hackthebox.eu/](https://www.hackthebox.eu/) | <script src="https://www.hackthebox.eu/badge/75978"></script> |
+| [Hack The Box](https://www.hackthebox.eu/) | <script src="https://www.hackthebox.eu/badge/75978"></script> |
