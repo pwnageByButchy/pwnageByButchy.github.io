@@ -26,7 +26,7 @@ There are also hardware CTFs, these can happen for those into hardware devices, 
 In information security, Capture the Flags (CTFs), a type of war-game, is a gamification of computer security. CTFs are usually designed to serve as an educational exercise to give participants experience in finding deficiencies in a machine, system, operating system or application's security, as well as conducting and reacting to the sort of attacks found in the real world.
 
 I have only recently started to get into CTF type sites like Hack The Box and Try Hack Me. You can see my progress below.
-
+<br /><br />
 | Site | Badge |
 | :----- | :------- |
 | [Try Hack Me](https://tryhackme.com/) | <script src="https://tryhackme.com/badge/36802"></script> |
