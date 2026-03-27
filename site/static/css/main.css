@@ -111,7 +111,7 @@ img { max-width: 100%; height: auto; }
   list-style: none;
   margin: 0;
 }
-.nav-list .nav-link-parent[aria-expanded="true"] + .nav-dropdown { display: flex; }
+.nav-list .nav-item--dropdown.open > .nav-dropdown { display: flex; }
 .nav-list .nav-dropdown li { display: block; }
 .nav-dropdown li a {
   display: block;

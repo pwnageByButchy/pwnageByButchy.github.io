@@ -4,18 +4,26 @@
  * © Steve Bartimote. All rights reserved.
  */
 
-// Dropdown menus — aria-expanded toggle
+// Dropdown menus — class-driven toggle, aria-expanded for accessibility
 (function initDropdowns() {
-  const triggers = document.querySelectorAll('.nav-link-parent[aria-expanded]');
+  const items = document.querySelectorAll('.nav-item--dropdown');
   function closeAll() {
-    triggers.forEach((t) => t.setAttribute('aria-expanded', 'false'));
+    items.forEach((el) => {
+      el.classList.remove('open');
+      el.querySelector('.nav-link-parent').setAttribute('aria-expanded', 'false');
+    });
   }
-  function onTriggerClick() {
-    const wasOpen = this.getAttribute('aria-expanded') === 'true';
-    closeAll();
-    if (!wasOpen) this.setAttribute('aria-expanded', 'true');
-  }
-  triggers.forEach((t) => t.addEventListener('click', onTriggerClick));
+  items.forEach((item) => {
+    const btn = item.querySelector('.nav-link-parent');
+    btn.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      closeAll();
+      if (!wasOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-item--dropdown')) closeAll();
   });
