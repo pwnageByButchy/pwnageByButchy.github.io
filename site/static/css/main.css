@@ -298,6 +298,28 @@ img { max-width: 100%; height: auto; }
 .home-intro p { margin-bottom: 1.25rem; text-align: justify; }
 .home-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin: 2rem 0 1.5rem; }
 
+/* ---- Legal disclaimer ---- */
+.legal-disclaimer {
+  background: var(--colour-bg-deep);
+  border-left: 3px solid var(--colour-warning, #cc9933);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: var(--colour-text-dim);
+  line-height: 1.6;
+}
+.legal-disclaimer__heading {
+  color: #cc9933;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+.legal-disclaimer p { margin-bottom: 0.5rem; text-align: left; }
+.legal-disclaimer p:last-child { margin-bottom: 0; }
+
 /* ---- Divider ---- */
 hr { border: none; border-top: 1px solid var(--colour-border); margin: 2rem 0; }
 

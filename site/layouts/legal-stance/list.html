@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="container">
+  <div class="section">
+    <h1 class="section-title">{{ .Title }}</h1>
+
+    <div class="legal-disclaimer">
+      <p class="legal-disclaimer__heading">Disclaimer</p>
+      <p>I am not a lawyer. Nothing on this site constitutes legal advice and it should not be treated as such. The content in this section represents my own research, interpretation, and analysis of publicly available Australian legislation, provided for educational and informational purposes only.</p>
+      <p>I do not condone, endorse, or encourage any violation of Australian law or any other law. If you choose to take action based on anything you read here, that is your decision and your responsibility alone. When in doubt, consult a qualified Australian legal professional.</p>
+      <p>My aim is to provide factual, plain-language analysis of how legislation applies in practice — to correct common misconceptions and help practitioners understand the legal framework they operate within. Nothing here should be read as a definitive legal interpretation or as authorisation to act in any particular way.</p>
+    </div>
+
+    {{ with .Content }}<div class="post-content">{{ . }}</div>{{ end }}
+
+    <div class="card-grid">
+      {{ $items := (.Pages | append .Sections) }}
+      {{ range sort $items "Date" "desc" }}
+      <article class="card">
+        {{ with .Params.tags }}
+        <span class="card-tag">{{ index . 0 }}</span>
+        {{ end }}
+        <h3><a class="card-link" href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        <div class="card-meta">
+          <span>{{ .Date.Format "2 Jan 2006" }}</span>
+          {{ with .ReadingTime }}<span>{{ . }} min read</span>{{ end }}
+        </div>
+      </article>
+      {{ else }}
+      <p style="color: var(--colour-text-dim);">Articles are being written — check back soon.</p>
+      {{ end }}
+    </div>
+
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</div>
+{{ end }}
