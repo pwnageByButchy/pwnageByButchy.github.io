@@ -47,9 +47,13 @@ copyright = '© Steve Bartimote. All rights reserved.'
     parent     = 'Resources'
     weight     = 1
   [[menus.main]]
+    name       = 'Legal Stance'
+    url        = '/legal-stance/'
+    weight     = 5
+  [[menus.main]]
     name       = 'Blog'
     url        = '/blog/'
-    weight     = 5
+    weight     = 6
 
 # Site parameters
 [params]
