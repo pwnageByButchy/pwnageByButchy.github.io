@@ -138,3 +138,27 @@ def test_build_post_text_no_description() -> None:
     result = _build_post_text("Title", "", "https://example.com")
     assert "Title" in result
     assert "https://example.com" in result
+
+
+def test_configure_saves_to_keyring(runner: CliRunner) -> None:
+    with patch("publisher.cli.keyring") as mock_kr:
+        result = runner.invoke(main, ["configure"], input="my-client-id\nmy-secret\n")
+    assert result.exit_code == 0
+    assert "saved" in result.output
+    calls = mock_kr.set_password.call_args_list
+    assert len(calls) == 2
+    mock_kr.set_password.assert_any_call("linkedin-publisher", "client_id", "my-client-id")
+    mock_kr.set_password.assert_any_call("linkedin-publisher", "client_secret", "my-secret")
+
+
+def test_client_reads_from_keyring(monkeypatch) -> None:
+    with patch("publisher.cli.keyring") as mock_kr:
+        mock_kr.get_password.side_effect = lambda svc, key: (
+            "kid" if key == "client_id" else "ksecret"
+        )
+        monkeypatch.delenv("LINKEDIN_CLIENT_ID", raising=False)
+        monkeypatch.delenv("LINKEDIN_CLIENT_SECRET", raising=False)
+        with patch("publisher.cli.LinkedInClient") as mock_linkedin:
+            from publisher.cli import _client
+            _client()
+    mock_linkedin.assert_called_once_with("kid", "ksecret", "http://localhost:8080/callback")

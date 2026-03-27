@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 _AUTHORIZE_URL = "https://www.linkedin.com/oauth/v2/authorization"
 _TOKEN_URL = "https://www.linkedin.com/oauth/v2/accessToken"
 _API_BASE = "https://api.linkedin.com"
-_SCOPES = ["w_member_social", "r_liteprofile", "openid", "profile"]
+_SCOPES = ["w_member_social", "openid", "profile"]
 _TOKENS_FILE = Path(__file__).parent.parent.parent / ".tokens.json"  # gitignored
 
 
@@ -84,35 +84,30 @@ class LinkedInClient:
             return False
 
     def create_post(self, text: str, article_url: str | None = None) -> str:
-        """Publish a post to LinkedIn and return the created post URN.
+        """Publish a post to LinkedIn via the UGC Posts API and return the post URN.
 
+        Uses /v2/ugcPosts which is available to individual developers with
+        the w_member_social scope and requires no versioning header.
         Raises LinkedInAuthError if no valid token is available.
         Raises LinkedInAPIError if the API returns an error response.
         """
         self._ensure_valid_token()
         author_urn = self._get_person_urn()
-        payload: dict = {
-            "author": author_urn,
-            "commentary": text,
-            "visibility": "PUBLIC",
-            "distribution": {
-                "feedDistribution": "MAIN_FEED",
-                "targetEntities": [],
-                "thirdPartyDistributionChannels": [],
-            },
-            "lifecycleState": "PUBLISHED",
-            "isReshareDisabledByAuthor": False,
+        share_content: dict = {
+            "shareCommentary": {"text": text},
+            "shareMediaCategory": "NONE",
         }
         if article_url:
-            payload["content"] = {
-                "article": {
-                    "source": article_url,
-                    "title": "",
-                    "description": "",
-                }
-            }
-        response = self._post("/rest/posts", payload, api_version="202401")
-        post_id = response.headers.get("x-restli-id", "")
+            share_content["shareMediaCategory"] = "ARTICLE"
+            share_content["media"] = [{"status": "READY", "originalUrl": article_url}]
+        payload = {
+            "author": author_urn,
+            "lifecycleState": "PUBLISHED",
+            "specificContent": {"com.linkedin.ugc.ShareContent": share_content},
+            "visibility": {"com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"},
+        }
+        response = self._post("/v2/ugcPosts", payload)
+        post_id = response.json().get("id", "")
         logger.info("Post created: %s", post_id)
         return post_id
 
@@ -215,8 +210,11 @@ class LinkedInClient:
         return response
 
     def _run_local_callback_server(self, auth_url: str, expected_state: str) -> str:
-        """Open a browser for OAuth and capture the authorisation code via localhost.
-        Returns the authorisation code string. Raises LinkedInAuthError on timeout.
+        """Attempt to capture the OAuth callback via a local HTTP server.
+
+        Falls back to manual code entry if the local server cannot be reached
+        (e.g. Wayland/sandbox environments where the browser cannot connect to
+        localhost). Returns the authorisation code string.
         """
         code_holder: dict = {}
 
@@ -230,22 +228,38 @@ class LinkedInClient:
                 self.wfile.write(b"Authorisation complete \xe2\x80\x94 you may close this tab.")
 
             def log_message(self, *args: object) -> None:
-                pass  # suppress access log noise
+                pass
 
         port = int(urlparse(self._redirect_uri).port or 8080)
-        server = HTTPServer(("localhost", port), _Handler)
-        server.timeout = 120
-        print(f"\nOpening browser for LinkedIn authorisation...\n{auth_url}\n")
+        server = HTTPServer(("127.0.0.1", port), _Handler)
+        server.timeout = 60
+
+        thread = threading.Thread(target=server.handle_request, daemon=True)
+        thread.start()
+
+        print(f"\n1. Open this URL in your browser:\n\n   {auth_url}\n")
+        print("2. Approve the LinkedIn authorisation request.")
+        print("3. Your browser will redirect to localhost:8080 — it may show an error.")
+        print("   If it connects automatically, you're done.")
+        print("   If not, copy the full redirect URL from the address bar and paste it below.\n")
         webbrowser.open(auth_url)
 
-        thread = threading.Thread(target=server.handle_request)
-        thread.start()
-        thread.join(timeout=130)
+        thread.join(timeout=70)
         server.server_close()
 
-        code = code_holder.get("code", "")
+        if code_holder.get("code"):
+            return code_holder["code"]
+        redirect_url = input("Paste the full redirect URL here (or press Enter to cancel): ").strip()
+        if not redirect_url:
+            raise LinkedInAuthError("Authentication cancelled.")
+        return self._parse_redirect_code(redirect_url, expected_state)
+
+    def _parse_redirect_code(self, redirect_url: str, expected_state: str) -> str:
+        """Extract and validate the auth code from a manually pasted redirect URL."""
+        params = parse_qs(urlparse(redirect_url).query)
+        if params.get("state", [""])[0] != expected_state:
+            raise LinkedInAuthError("State mismatch — possible CSRF. Please re-run auth.")
+        code = params.get("code", [""])[0]
         if not code:
-            raise LinkedInAuthError(
-                "No authorisation code received — did you complete the LinkedIn login?"
-            )
+            raise LinkedInAuthError("No authorisation code found in the pasted URL.")
         return code

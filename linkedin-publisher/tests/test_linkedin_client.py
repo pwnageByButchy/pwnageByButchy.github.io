@@ -72,10 +72,11 @@ def test_get_person_urn_caches_result(client: LinkedInClient) -> None:
 def test_create_post_returns_post_id(client: LinkedInClient) -> None:
     client._tokens = {"access_token": "tok"}
     client._person_urn = "urn:li:person:123"
-    mock_resp = MagicMock(ok=True, headers={"x-restli-id": "urn:li:share:456"})
+    mock_resp = MagicMock(ok=True)
+    mock_resp.json.return_value = {"id": "urn:li:ugcPost:456"}
     with patch("requests.post", return_value=mock_resp) as mock_post:
         post_id = client.create_post(text="Hello LinkedIn", article_url="https://example.com")
-    assert post_id == "urn:li:share:456"
+    assert post_id == "urn:li:ugcPost:456"
     assert mock_post.called
 
 

@@ -8,7 +8,7 @@ dependencies = [
     "click>=8.1",
     "python-frontmatter>=1.1",
     "requests>=2.32",
-    "python-dotenv>=1.0",
+    "keyring>=25.0",
 ]
 
 [project.scripts]

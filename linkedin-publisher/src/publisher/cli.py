@@ -3,8 +3,8 @@ LinkedIn Publisher CLI — review and publish Hugo blog posts to LinkedIn.
 
 Author: Steve Bartimote
 © Steve Bartimote. All rights reserved.
-
 Usage:
+    linkedin-publisher configure         Save LinkedIn app credentials to the system keyring
     linkedin-publisher auth              Authenticate with LinkedIn (OAuth)
     linkedin-publisher list              List blog posts queued for LinkedIn
     linkedin-publisher review <slug>     Preview a queued post before publishing
@@ -18,12 +18,12 @@ import sys
 from pathlib import Path
 
 import click
-from dotenv import load_dotenv
-
+import keyring
 from publisher.content_scanner import ContentScanner
 from publisher.linkedin_client import LinkedInAuthError, LinkedInClient
 
-load_dotenv()
+_KEYRING_SERVICE = "linkedin-publisher"
+
 logging.basicConfig(level=logging.WARNING, format="%(levelname)s: %(message)s")
 
 
@@ -38,14 +38,14 @@ def _content_dir() -> Path:
 
 
 def _client() -> LinkedInClient:
-    """Build a LinkedInClient from environment variables."""
-    client_id = os.getenv("LINKEDIN_CLIENT_ID", "")
-    client_secret = os.getenv("LINKEDIN_CLIENT_SECRET", "")
+    """Build a LinkedInClient from the system keyring, falling back to env vars."""
+    client_id = keyring.get_password(_KEYRING_SERVICE, "client_id") or os.getenv("LINKEDIN_CLIENT_ID", "")
+    client_secret = keyring.get_password(_KEYRING_SERVICE, "client_secret") or os.getenv("LINKEDIN_CLIENT_SECRET", "")
     redirect_uri = os.getenv("LINKEDIN_REDIRECT_URI", "http://localhost:8080/callback")
     if not client_id or not client_secret:
         click.echo(
-            "Error: LINKEDIN_CLIENT_ID and LINKEDIN_CLIENT_SECRET must be set.\n"
-            "Copy .env.example to .env and fill in your LinkedIn app credentials.",
+            "Error: LinkedIn credentials not found.\n"
+            "Run `linkedin-publisher configure` to store them in the system keyring.",
             err=True,
         )
         sys.exit(1)
@@ -55,6 +55,16 @@ def _client() -> LinkedInClient:
 @click.group()
 def main() -> None:
     """Publish Hugo blog posts to LinkedIn with a mandatory review step."""
+
+
+@main.command()
+def configure() -> None:
+    """Save LinkedIn app credentials to the system keyring (run once after creating your app)."""
+    client_id = click.prompt("LinkedIn Client ID")
+    client_secret = click.prompt("LinkedIn Client Secret", hide_input=True)
+    keyring.set_password(_KEYRING_SERVICE, "client_id", client_id)
+    keyring.set_password(_KEYRING_SERVICE, "client_secret", client_secret)
+    click.echo("Credentials saved to the system keyring.")
 
 
 @main.command()
