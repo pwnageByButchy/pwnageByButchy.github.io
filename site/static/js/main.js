@@ -12,9 +12,14 @@
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
       const isOpen = item.classList.contains('open');
-      // Close all other dropdowns first
       dropdowns.forEach((d) => d.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
+    });
+    // Close dropdown when any child link is clicked
+    item.querySelectorAll('.nav-dropdown a').forEach((link) => {
+      link.addEventListener('click', () => {
+        dropdowns.forEach((d) => d.classList.remove('open'));
+      });
     });
   });
   document.addEventListener('click', (e) => {
