@@ -60,7 +60,7 @@ We cover the relevant legislation, what constitutes lawful open source collectio
 
 Intelligence Analysis 101 is available now through Study Sessions with Butchy. Head to the [Courses](/courses/) page for enrolment details.
 
-If you have questions about whether this course suits your background or role, get in touch via [LinkedIn](https://www.linkedin.com/in/stevebartimote/).
+If you have questions about whether this course suits your background or role, get in touch via [LinkedIn](https://www.linkedin.com/in/stephenbartimote/).
 
 ---
 

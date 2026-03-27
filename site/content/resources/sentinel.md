@@ -25,4 +25,4 @@ Core capability areas under development include:
 
 Sentinel is currently under heavy development. It is not yet available for external use.
 
-An early access programme will be announced through this site when the platform is ready. If you have a specific operational use case you would like to discuss, get in touch via [LinkedIn](https://www.linkedin.com/in/stevebartimote/).
+An early access programme will be announced through this site when the platform is ready. If you have a specific operational use case you would like to discuss, get in touch via [LinkedIn](https://www.linkedin.com/in/stephenbartimote/).

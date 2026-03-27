@@ -10,4 +10,4 @@ The Cyber Engineering Series is for security engineers, developers, and infrastr
 
 Courses in this series are built for practitioners working in security operations, penetration testing, DevSecOps, infrastructure, and software engineering roles. They assume a working technical background and move quickly — no time is spent on content that's already well-covered by existing certifications.
 
-Courses in this series are currently under development. Check back for announcements, or follow along on [LinkedIn](https://www.linkedin.com/in/stevebartimote/).
+Courses in this series are currently under development. Check back for announcements, or follow along on [LinkedIn](https://www.linkedin.com/in/stephenbartimote/).
