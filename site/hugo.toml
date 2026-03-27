@@ -55,6 +55,9 @@ copyright = '© Steve Bartimote. All rights reserved.'
     url        = '/blog/'
     weight     = 6
 
+# Google Analytics
+googleAnalytics = 'G-KSXP14YGP8'
+
 # Site parameters
 [params]
   author      = 'Steve Bartimote'
