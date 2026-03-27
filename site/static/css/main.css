@@ -305,6 +305,7 @@ img { max-width: 100%; height: auto; }
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 1rem 1.25rem;
   margin-bottom: 2rem;
+  max-width: 720px;
   font-size: 0.875rem;
   color: var(--colour-text-dim);
   line-height: 1.6;
