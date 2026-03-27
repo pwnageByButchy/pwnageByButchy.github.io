@@ -5,12 +5,13 @@
     {{ with .Content }}<div class="post-content">{{ . }}</div>{{ end }}
 
     <div class="card-grid">
-      {{ range .Pages }}
+      {{ $items := (.Pages | append .Sections) }}
+      {{ range sort $items "Date" "desc" }}
       <article class="card">
         {{ with .Params.tags }}
         <span class="card-tag">{{ index . 0 }}</span>
         {{ end }}
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <h3><a class="card-link" href="{{ .Permalink }}">{{ .Title }}</a></h3>
         {{ with .Description }}<p>{{ . }}</p>{{ end }}
         <div class="card-meta">
           <span>{{ .Date.Format "2 Jan 2006" }}</span>

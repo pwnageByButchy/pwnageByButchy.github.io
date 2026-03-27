@@ -192,10 +192,17 @@ img { max-width: 100%; height: auto; }
   border-radius: var(--radius);
   padding: 1.5rem;
   transition: border-color 0.2s, transform 0.15s;
+  position: relative;
 }
 .card:hover {
   border-color: var(--colour-muted);
   transform: translateY(-2px);
+}
+/* Stretched link — makes the entire card clickable */
+.card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
 }
 .card-tag {
   display: inline-block;
