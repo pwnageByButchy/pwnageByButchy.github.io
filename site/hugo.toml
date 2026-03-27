@@ -24,6 +24,16 @@ copyright = '© Steve Bartimote. All rights reserved.'
     url        = '/courses/'
     weight     = 2
   [[menus.main]]
+    name       = 'Intelligence Series'
+    url        = '/courses/intelligence-series/'
+    parent     = 'Courses'
+    weight     = 1
+  [[menus.main]]
+    name       = 'Cyber Engineering Series'
+    url        = '/courses/cyber-engineering-series/'
+    parent     = 'Courses'
+    weight     = 2
+  [[menus.main]]
     name       = 'Books'
     url        = '/books/'
     weight     = 3
@@ -31,6 +41,11 @@ copyright = '© Steve Bartimote. All rights reserved.'
     name       = 'Resources'
     url        = '/resources/'
     weight     = 4
+  [[menus.main]]
+    name       = 'Sentinel'
+    url        = '/resources/sentinel/'
+    parent     = 'Resources'
+    weight     = 1
   [[menus.main]]
     name       = 'Blog'
     url        = '/blog/'

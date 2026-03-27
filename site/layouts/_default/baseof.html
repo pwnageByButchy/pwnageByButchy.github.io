@@ -20,7 +20,20 @@
       <a href="{{ "/" | relURL }}" class="brand">{{ .Site.Params.brand }}</a>
       <ul>
         {{ range .Site.Menus.main }}
+        {{ if not .Parent }}
+        {{ if .HasChildren }}
+        <li class="nav-item nav-item--dropdown">
+          <a href="{{ .URL }}" class="nav-link-parent">{{ .Name }}</a>
+          <ul class="nav-dropdown">
+            {{ range .Children }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </li>
+        {{ else }}
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+        {{ end }}
         {{ end }}
       </ul>
     </div>
