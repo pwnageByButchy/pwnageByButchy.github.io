@@ -32,6 +32,44 @@
   });
 })();
 
+// Contact form — async submission via Web3Forms
+(function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  const btn    = form.querySelector('.contact-submit');
+  const result = document.getElementById('contact-result');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    result.textContent = '';
+    result.className = 'contact-result';
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        result.textContent = 'Message sent — thanks, I\'ll be in touch.';
+        result.classList.add('contact-result--success');
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Submission failed.');
+      }
+    } catch (err) {
+      result.textContent = 'Something went wrong. Please try again or reach out on LinkedIn.';
+      result.classList.add('contact-result--error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    }
+  });
+})();
+
 // Highlight active nav link based on current path
 (function markActiveNav() {
   const path = window.location.pathname;

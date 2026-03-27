@@ -1,12 +1,14 @@
 ---
-# Author: Steve Bartimote
-# © Steve Bartimote. All rights reserved.
-title: "pwnagebybutchy.me — The Site Is Live"
-description: "The new home for Study Sessions with Butchy is up — courses, tools, and resources for cyber security and intelligence practitioners, with more to come."
-date: 2025-03-27T00:00:00+00:00
-tags: ["meta", "community"]
-linkedin_queue: true
-linkedin_posted: false
+date: 2025-03-27 00:00:00+00:00
+description: The new home for Study Sessions with Butchy is up — courses, tools, and
+  resources for cyber security and intelligence practitioners, with more to come.
+linkedin_posted: true
+linkedin_posted_at: '2026-03-27T08:29:12.271405+00:00'
+linkedin_queue: false
+tags:
+- meta
+- community
+title: pwnagebybutchy.me — The Site Is Live
 ---
 
 The site is live at [pwnagebybutchy.me](https://pwnagebybutchy.me) — and before anyone says anything, yes, it is very much a work in progress.

@@ -63,7 +63,10 @@ copyright = '© Steve Bartimote. All rights reserved.'
   description = 'Courses, books, and resources on intelligence analysis and cyber engineering.'
   domain      = 'pwnagebybutchy.me'
 
+  # Contact form
+  web3formsKey = '355eb62a-40ed-47f3-bbd1-d9702e61e94d'
+
   # Social links
   [params.social]
     linkedin = 'https://www.linkedin.com/in/stephenbartimote'
-    github   = 'https://github.com/'            # fill in your GitHub username
+    github   = 'https://github.com/pwnagebybutchy'

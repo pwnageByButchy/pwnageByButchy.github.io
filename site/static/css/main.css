@@ -321,6 +321,45 @@ img { max-width: 100%; height: auto; }
 .legal-disclaimer p { margin-bottom: 0.5rem; text-align: left; }
 .legal-disclaimer p:last-child { margin-bottom: 0; }
 
+/* ---- Contact form ---- */
+.contact-section { border-top: 1px solid var(--colour-border); }
+.contact-form { max-width: 560px; }
+.form-group { margin-bottom: 1.25rem; }
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--colour-text-dim);
+  margin-bottom: 0.4rem;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: var(--colour-bg-card);
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius);
+  color: var(--colour-text);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  padding: 0.6rem 0.85rem;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--colour-accent);
+}
+.contact-submit { margin-top: 0.5rem; cursor: pointer; border: none; }
+.contact-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.contact-result {
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  min-height: 1.4em;
+}
+.contact-result--success { color: var(--colour-success); }
+.contact-result--error   { color: var(--colour-danger); }
+
 /* ---- Divider ---- */
 hr { border: none; border-top: 1px solid var(--colour-border); margin: 2rem 0; }
 
