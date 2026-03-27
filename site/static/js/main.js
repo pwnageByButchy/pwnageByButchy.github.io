@@ -4,28 +4,23 @@
  * © Steve Bartimote. All rights reserved.
  */
 
-// Click-toggle dropdown menus; close when clicking outside
+// Dropdown menus — aria-expanded toggle
 (function initDropdowns() {
-  const dropdowns = document.querySelectorAll('.nav-item--dropdown');
-  dropdowns.forEach((item) => {
-    const trigger = item.querySelector('.nav-link-parent');
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      const isOpen = item.classList.contains('open');
-      dropdowns.forEach((d) => d.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-    // Close dropdown when any child link is clicked
-    item.querySelectorAll('.nav-dropdown a').forEach((link) => {
-      link.addEventListener('click', () => {
-        dropdowns.forEach((d) => d.classList.remove('open'));
-      });
-    });
-  });
+  const triggers = document.querySelectorAll('.nav-link-parent[aria-expanded]');
+  function closeAll() {
+    triggers.forEach((t) => t.setAttribute('aria-expanded', 'false'));
+  }
+  function onTriggerClick() {
+    const wasOpen = this.getAttribute('aria-expanded') === 'true';
+    closeAll();
+    if (!wasOpen) this.setAttribute('aria-expanded', 'true');
+  }
+  triggers.forEach((t) => t.addEventListener('click', onTriggerClick));
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-item--dropdown')) {
-      dropdowns.forEach((d) => d.classList.remove('open'));
-    }
+    if (!e.target.closest('.nav-item--dropdown')) closeAll();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
   });
 })();
 

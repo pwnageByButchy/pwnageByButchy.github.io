@@ -23,10 +23,10 @@
         {{ if not .Parent }}
         {{ if .HasChildren }}
         <li class="nav-item nav-item--dropdown">
-          <a href="{{ .URL }}" class="nav-link-parent">{{ .Name }}</a>
-          <ul class="nav-dropdown">
+          <button class="nav-link-parent" aria-expanded="false" aria-haspopup="true">{{ .Name }}</button>
+          <ul class="nav-dropdown" role="menu">
             {{ range .Children }}
-            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            <li role="none"><a href="{{ .URL }}" role="menuitem">{{ .Name }}</a></li>
             {{ end }}
           </ul>
         </li>
