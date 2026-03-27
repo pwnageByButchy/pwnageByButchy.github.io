@@ -64,7 +64,7 @@ img { max-width: 100%; height: auto; }
   color: var(--colour-accent);
   letter-spacing: 0.02em;
 }
-.site-nav ul {
+.nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -94,7 +94,7 @@ img { max-width: 100%; height: auto; }
   transition: color 0.2s;
 }
 .nav-link-parent:hover { color: var(--colour-accent); }
-.nav-dropdown {
+.nav-list .nav-dropdown {
   display: none;
   flex-direction: column;
   gap: 0;
@@ -111,8 +111,8 @@ img { max-width: 100%; height: auto; }
   list-style: none;
   margin: 0;
 }
-.nav-link-parent[aria-expanded="true"] + .nav-dropdown { display: flex; }
-.nav-dropdown li { display: block; }
+.nav-list .nav-link-parent[aria-expanded="true"] + .nav-dropdown { display: flex; }
+.nav-list .nav-dropdown li { display: block; }
 .nav-dropdown li a {
   display: block;
   padding: 0.5rem 1rem;
