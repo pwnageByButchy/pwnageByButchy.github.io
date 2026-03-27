@@ -56,7 +56,7 @@ copyright = '© Steve Bartimote. All rights reserved.'
     weight     = 6
   [[menus.main]]
     name       = 'Contact'
-    url        = '/#contact'
+    url        = '/contact/'
     weight     = 7
 
 # Site parameters

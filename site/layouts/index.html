@@ -9,31 +9,5 @@
   </div>
 </section>
 
-<section id="contact" class="section contact-section">
-  <div class="container">
-    <h2 class="section-title">Get in Touch</h2>
-    <p class="section-subtitle">Questions about courses, resources, or the project? Send a message.</p>
-    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form" novalidate>
-      <input type="hidden" name="access_key" value="{{ .Site.Params.web3formsKey }}">
-      <input type="hidden" name="subject" value="Contact — pwnage by Butchy">
-      <input type="hidden" name="redirect" value="false">
-      <input type="checkbox" name="botcheck" style="display:none">
-      <div class="form-group">
-        <label for="contact-name">Name</label>
-        <input type="text" id="contact-name" name="name" required autocomplete="name">
-      </div>
-      <div class="form-group">
-        <label for="contact-email">Email</label>
-        <input type="email" id="contact-email" name="email" required autocomplete="email">
-      </div>
-      <div class="form-group">
-        <label for="contact-message">Message</label>
-        <textarea id="contact-message" name="message" rows="6" required></textarea>
-      </div>
-      <button type="submit" class="btn contact-submit">Send Message</button>
-      <p id="contact-result" class="contact-result" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
 
 {{ end }}
