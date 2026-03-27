@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="container">
+  <div class="section">
+    <h1 class="section-title">{{ .Title }}</h1>
+    {{ with .Content }}<div class="post-content">{{ . }}</div>{{ end }}
+
+    <div class="card-grid">
+      {{ range .Pages }}
+      <article class="card">
+        {{ with .Params.tags }}
+        <span class="card-tag">{{ index . 0 }}</span>
+        {{ end }}
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        <div class="card-meta">
+          <span>{{ .Date.Format "2 Jan 2006" }}</span>
+          {{ with .ReadingTime }}<span>{{ . }} min read</span>{{ end }}
+        </div>
+      </article>
+      {{ else }}
+      <p style="color: var(--colour-text-dim);">Nothing here yet — check back soon.</p>
+      {{ end }}
+    </div>
+
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</div>
+{{ end }}

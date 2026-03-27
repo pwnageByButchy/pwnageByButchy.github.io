@@ -1,0 +1,31 @@
+# Hugo build output
+site/public/
+site/resources/_gen/
+site/.hugo_build.lock
+
+# Hugo theme dependencies (managed as git submodules)
+# site/themes/*  ← uncomment if NOT using submodules
+
+# LinkedIn publisher
+linkedin-publisher/.tokens.json
+linkedin-publisher/.venv/
+linkedin-publisher/__pycache__/
+linkedin-publisher/src/publisher/__pycache__/
+linkedin-publisher/tests/__pycache__/
+linkedin-publisher/*.egg-info/
+linkedin-publisher/dist/
+linkedin-publisher/.pytest_cache/
+
+# Environment files
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
