@@ -3,6 +3,7 @@
 # © Steve Bartimote. All rights reserved.
 title: "Intelligence Series"
 description: "A rigorous curriculum for practitioners who work with information for a living — investigators, analysts, cyber security professionals, and intelligence officers."
+date: 2025-03-27T00:00:00+00:00
 ---
 
 The Intelligence Series is built for practitioners who work with information for a living — investigators, analysts, cyber security professionals, and intelligence officers who need to move beyond ad hoc research and operate to a professional standard.

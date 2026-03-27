@@ -3,6 +3,7 @@
 # © Steve Bartimote. All rights reserved.
 title: "Cyber Engineering Series"
 description: "A technical series for security engineers, developers, and infrastructure professionals — covering secure systems design, offensive and defensive security engineering, and the tooling that underpins modern cyber operations."
+date: 2025-03-27T00:00:00+00:00
 ---
 
 The Cyber Engineering Series is for security engineers, developers, and infrastructure professionals who need to go deeper than vendor certifications and framework checklists. The curriculum covers the engineering disciplines that underpin modern cyber security operations: secure systems and application design, offensive and defensive security engineering, infrastructure hardening, and the automation and tooling that makes security programmes repeatable at scale.

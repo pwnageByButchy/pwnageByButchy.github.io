@@ -60,5 +60,5 @@ copyright = '© Steve Bartimote. All rights reserved.'
 
   # Social links
   [params.social]
-    linkedin = 'https://www.linkedin.com/in/'   # fill in your LinkedIn profile URL
+    linkedin = 'https://www.linkedin.com/in/stephenbartimote'
     github   = 'https://github.com/'            # fill in your GitHub username
