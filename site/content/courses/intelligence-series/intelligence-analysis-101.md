@@ -2,7 +2,7 @@
 # Author: Steve Bartimote
 # © Steve Bartimote. All rights reserved.
 title: "Intelligence Analysis 101: Basic Intelligence Analysis"
-description: "A practical 16-hour course in OSINT collection, source evaluation, and structured analysis for Australian practitioners. Available in self-paced and online instructor-led formats."
+description: "A practical 16-hour course in OSINT collection, source evaluation, and structured analysis for Australian practitioners. Available in self-paced and self-paced online formats."
 date: 2025-03-27T00:00:00+00:00
 tags: ["intelligence", "osint"]
 ---
@@ -39,11 +39,11 @@ Dark web, GEOSINT, cryptocurrency OSINT, writing intelligence products, and the 
 
 ## Available Formats
 
-| | Self-Paced Online | Online Instructor-Led |
+| | Self-Paced | Self-Paced Online |
 |---|---|---|
-| **Duration** | 16 hours — work at your own pace | 16 hours across scheduled cohort sessions |
-| **Delivery** | Fully self-directed | Live Q&A and assessor-led debrief sessions |
-| **Assessment** | Capstone intelligence assessment | Capstone with assessor feedback |
+| **Duration** | 16 hours — work at your own pace | 16 hours of on-demand video |
+| **Delivery** | Fully self-directed | Pre-recorded video lectures |
+| **Assessment** | Capstone intelligence assessment | Capstone intelligence assessment |
 | **Tools** | Free and open source only | Free and open source only |
 | **Prerequisites** | None | None |
 
