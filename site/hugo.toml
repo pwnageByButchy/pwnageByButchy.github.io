@@ -42,8 +42,8 @@ copyright = '© Steve Bartimote. All rights reserved.'
     url        = '/resources/'
     weight     = 4
   [[menus.main]]
-    name       = 'Sentinel'
-    url        = '/resources/sentinel/'
+    name       = 'Acratic²'
+    url        = '/resources/acratic2/'
     parent     = 'Resources'
     weight     = 1
   [[menus.main]]

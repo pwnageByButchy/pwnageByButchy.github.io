@@ -1,17 +1,19 @@
 ---
 # Author: Steve Bartimote
 # © Steve Bartimote. All rights reserved.
-title: "Sentinel"
+title: "Acratic²"
 description: "An intelligence platform for structured OSINT and breach-data investigation. Currently under heavy development."
 date: 2025-03-27T00:00:00+00:00
 tags: ["tools", "osint", "intelligence"]
 ---
 
-Sentinel is an intelligence platform being built for structured OSINT and breach-data investigation. It provides analysts with a disciplined workflow for building Person of Interest and Organisation of Interest profiles, managing case files, and documenting collection methodology — all within an Australian legal and operational context.
+Acratic² is an intelligence platform being built for structured OSINT and breach-data investigation. It provides analysts with a disciplined workflow for building Person of Interest and Organisation of Interest profiles, managing case files, and documenting collection methodology — all within an Australian legal and operational context.
 
-## What Sentinel Does
+*Why "Acratic"? It is an adjective for the state of acting against your own better judgement, precisely the failure disciplined analysis exists to prevent. The platform is named for the habit it is built to counter.*
 
-The platform is designed around the same tradecraft principles taught in the Intelligence Series courses. Rather than a generic data aggregation tool, Sentinel is built to enforce good analytic practice: collection is documented against sources, assessments are separated from raw findings, and the case record supports audit and review.
+## What Acratic² Does
+
+The platform is designed around the same tradecraft principles taught in the Intelligence Series courses. Rather than a generic data aggregation tool, Acratic² is built to enforce good analytic practice: collection is documented against sources, assessments are separated from raw findings, and the case record supports audit and review.
 
 Core capability areas under development include:
 
@@ -23,6 +25,6 @@ Core capability areas under development include:
 
 ## Current Status
 
-Sentinel is currently under heavy development. It is not yet available for external use.
+Acratic² is currently under heavy development. It is not yet available for external use.
 
 An early access programme will be announced through this site when the platform is ready. If you have a specific operational use case you would like to discuss, get in touch via [LinkedIn](https://www.linkedin.com/in/stephenbartimote/).
